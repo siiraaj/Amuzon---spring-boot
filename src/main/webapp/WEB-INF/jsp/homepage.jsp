@@ -39,7 +39,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a class="nav-link" href="/">Home
+					<li class="nav-item active"><a class="nav-link" href="#">Home
 							<span class="sr-only">(current)</span>
 					</a></li>
 					<li class="nav-item"><button class="btn btn-danger">Quit</button></li>
@@ -58,26 +58,26 @@
 				<h1 class="my-4">Amuzon</h1>
 				<div class="list-group">
 					<form id="allfilter"
-						action="${pageContext.request.contextPath}/category" method="POST">
-						<input type="hidden" value="all" name="name" /> <a
+						action="${pageContext.request.contextPath}/index" method="POST">
+						<input type="hidden" value="[VALEUR_DU_PARAMETRE]" name="[NOM_DU_PARAMETRE]" /> <a
 							class="list-group-item" href="javascript:{}"
 							onclick="document.getElementById('allfilter').submit(); return false;">ALL</a>
 					</form>
 					<form id="computerfilter"
-						action="${pageContext.request.contextPath}/category" method="POST">
-						<input type="hidden" value="computer" name="name" /> <a
+						action="${pageContext.request.contextPath}/category?name=computer" method="POST">
+						<input type="hidden" value="computer" name="computer" /> <a
 							class="list-group-item" href="javascript:{}"
 							onclick="document.getElementById('computerfilter').submit(); return false;">Computer</a>
 					</form>
 					<form id="clothesfilter"
-						action="${pageContext.request.contextPath}/category" method="POST">
-						<input type="hidden" value="clothes" name="name" /> <a
+						action="${pageContext.request.contextPath}/category?name=clothes" method="POST">
+						<input type="hidden" value="" name="clothes" /> <a
 							class="list-group-item" href="javascript:{}"
 							onclick="document.getElementById('clothesfilter').submit(); return false;">Clothes</a>
 					</form>
 					<form id="moviesfilter"
-						action="${pageContext.request.contextPath}/category" method="POST">
-						<input type="hidden" value="movies" name="name" /> <a
+						action="${pageContext.request.contextPath}/category?name=movies" method="POST">
+						<input type="hidden" value="movies" name="movies" /> <a
 							class="list-group-item" href="javascript:{}"
 							onclick="document.getElementById('moviesfilter').submit(); return false;">Movies</a>
 					</form>
@@ -89,7 +89,7 @@
 			<div class="col-lg-9">
 
 				<div class="my-4 row">
-					<!-- version pour g�n�rer un produit arbitraire, conserv�e pour l'example
+					<!-- version pour générer un produit arbitraire, conservée pour l'example
 					<form action="${pageContext.request.contextPath}/add" method="POST">
 						<button id="btnAddProduct" type="submit" class="btn btn-success">
 							<i class="fa fa-plus" aria-hidden="true"></i> Add Product
@@ -106,7 +106,6 @@
 
 				<div id="myModal" class="modal fade" role="dialog">
 					<div class="modal-dialog">
-
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -114,20 +113,20 @@
 							</div>
 							<div class="modal-body">
 								<form id="addproductform"
-									action="${pageContext.request.contextPath}/add" method="POST"> <!-- Choisir l'url ad�quate et la m�thode http voulue -->
+									action="${pageContext.request.contextPath}/add" method=""> <!-- Choisir l'url adéquate et la méthode http voulue -->
 									<div class="form-group">
 										<label for="titleinput">Title:</label> <input type="text"
-											class="form-control" id="titleinput" name="title"></input>
+											class="form-control" id="titleinput" name="tit"></input>
 									</div>
 									<div class="form-group">
 										<label for="descriptioninput">Description:</label> <input
 											type="text" class="form-control" id="descriptioninput"
-											name="description"></input>
+											name="desc"></input>
 									</div>
 
 									<div class="form-group">
 										<label for="categoryselect">Category:</label> <select
-											class="form-control" id="categoryselect" name="category">
+											class="form-control" id="categoryselect" name="cat">
 											<option>computer</option>
 											<option>clothes</option>
 											<option>movies</option>
@@ -137,7 +136,7 @@
 							</div>
 
 							<div class="modal-footer">
-								<!--  bouton avec un javascript pour submit le formulaire � distance -->
+								<!--  bouton avec un javascript pour submit le formulaire à distance -->
 								<button type="button" class="btn btn-primary"
 									data-dismiss="modal"
 									onclick="document.getElementById('addproductform').submit(); return false;">Confirm</button>
@@ -167,6 +166,7 @@
 						class="sr-only">Next</span>
 					</a>
 				</div>
+
 
 				<div id="previews" class="row">
 		              <c:forEach items="${products}" var="product">

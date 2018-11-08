@@ -38,6 +38,7 @@ public class ProductServiceImp implements ProductService{
 		return dao.findAll();
 	}
 
+	
 	@Override
 	public List<Product> getCategoryProducts(String category) {
 		return dao.findByCategory(category);

@@ -1,0 +1,7 @@
+/*C2*/SET SCHEMA PUBLIC
+DROP TABLE products IF EXISTS
+CREATE TABLE IF NOT EXISTS products(id INTEGER IDENTITY PRIMARY KEY, category VARCHAR(255), productTitle VARCHAR(255), description VARCHAR(255))
+INSERT INTO PRODUCTS VALUES(0,'clothes','shirt','a plain shirt')
+COMMIT
+INSERT INTO PRODUCTS VALUES(1,'computer','gpu','nvidia 2080ti')
+COMMIT

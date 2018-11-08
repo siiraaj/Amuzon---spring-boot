@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: fr.amu.IndexControllerTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 10.065 s <<< FAILURE! - in fr.amu.IndexControllerTests
+contexLoads(fr.amu.IndexControllerTests)  Time elapsed: 0.142 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expecting:
+ <"{"timestamp":"2018-11-08T23:23:16.680+0000","status":404,"error":"Not Found","message":"No message available","path":"/"}">
+to contain:
+ <"homepage"> 
+	at fr.amu.IndexControllerTests.contexLoads(IndexControllerTests.java:33)
+
